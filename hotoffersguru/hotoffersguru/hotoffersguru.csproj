@@ -76,6 +76,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -117,11 +133,79 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Portal\Content\assets\css\animate.min.css" />
+    <Content Include="Areas\Portal\Content\assets\css\animsition.min.css" />
+    <Content Include="Areas\Portal\Content\assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Portal\Content\assets\css\icons.css" />
+    <Content Include="Areas\Portal\Content\assets\css\style.css" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular-2.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular-3.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular-4.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular-5.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regulard41d.html" />
+    <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.svg" />
+    <Content Include="Areas\Portal\Content\assets\images\amazon-logo-small.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal1.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal2.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal3.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal4.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal5.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal6.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal7.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\deal8.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\logo.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\amz-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\ax-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\mb-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\mst-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\mstr-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\payment\paypal-icon.png" />
+    <Content Include="Areas\Portal\Content\assets\images\slide-01.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide-02.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide-03.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide_1_2.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide_1_3.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide_1_4.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\slide_1_5.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thmbsm-1.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thmbsm-4.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thmbsm-5.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thmbsm-6.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb1.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb10.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb11.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb12.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb13.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb14.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb15.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb2.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb3.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb4.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb5.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb6.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumb8.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumbB1.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumbB2.png" />
+    <Content Include="Areas\Portal\Content\assets\images\thumbB3.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thumbB7.jpg" />
+    <Content Include="Areas\Portal\Content\assets\images\thumbB8.png" />
+    <Content Include="Areas\Portal\Content\assets\js\animsition.min.js" />
+    <Content Include="Areas\Portal\Content\assets\js\bootstrap.min.js" />
+    <Content Include="Areas\Portal\Content\assets\js\jquery.min.js" />
+    <Content Include="Areas\Portal\Content\assets\js\kupon.js" />
+    <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.video.play.html" />
+    <Content Include="Areas\Portal\Content\owl.carousel\owl.carousel.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BootStrapper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Portal\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,6 +217,16 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Portal\Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Portal\Views\Shared\_HomePagrLayout.cshtml" />
+    <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_CategoryPageLayout.cshtml" />
+    <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.eot" />
+    <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.ttf" />
+    <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.woff" />
+    <Content Include="Areas\Portal\Content\assets\fonts\themifyd41d.eot" />
+    <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -142,8 +236,26 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Portal\Models\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\hotoffersguru.Data\hotoffersguru.Data.csproj">
+      <Project>{b4e0e5ea-9ca1-4855-aa43-6b1d274d9c9e}</Project>
+      <Name>hotoffersguru.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\hotoffersguru.Entity\hotoffersguru.Entity.csproj">
+      <Project>{04ea5bcb-7f7e-4e5a-a554-e01b4afacaf4}</Project>
+      <Name>hotoffersguru.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\hotoffersguru.Service\hotoffersguru.Service.csproj">
+      <Project>{157e1925-98f0-404a-adc8-507bc6e693e0}</Project>
+      <Name>hotoffersguru.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
