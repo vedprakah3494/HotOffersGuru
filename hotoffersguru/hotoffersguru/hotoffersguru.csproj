@@ -92,6 +92,7 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -233,14 +234,14 @@
     </Content>
     <Content Include="Areas\Portal\Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Portal\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Portal\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_CategoryPageLayout.cshtml" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.eot" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.ttf" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.woff" />
     <Content Include="Areas\Portal\Content\assets\fonts\themifyd41d.eot" />
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\__LayoutHome.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_LayoutCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
