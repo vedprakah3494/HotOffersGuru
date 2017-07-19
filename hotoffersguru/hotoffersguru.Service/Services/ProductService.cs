@@ -9,27 +9,39 @@ using System.Threading.Tasks;
 
 namespace hotoffersguru.Service
 {
-    public class ProductService 
+    public class ProductService : IProductService
     {
+        private readonly IFlipkart _flipkart;
+        public ProductService(IFlipkart flipkart)
+        {
+            _flipkart = flipkart;
+
+        }
         public List<ProductDetail> GetProductDetail()
         {
 
-            var productDetail = new List<ProductDetail>();
-            Flipkart fp = new Flipkart();
+            var productDetaillist = new List<ProductDetail>();
             string category = "bags wallets belts";
-            productDetail= fp.getProductDetailFlipkart(category);
-            return productDetail;
+            productDetaillist = _flipkart.getProductDetailFlipkart(category);
+            return productDetaillist;
 
         }
 
         public List<ProductDetail> GetProductDetailByKeword()
         {
 
-            var productDetail = new List<ProductDetail>();
-            Flipkart fp = new Flipkart();
+            var productDetaillist = new List<ProductDetail>();
             string keyword = "sony+mobiless";
-            productDetail = fp.SearchProductDetailFlipkart(keyword);
-            return productDetail;
+            productDetaillist = _flipkart.SearchProductDetailFlipkart(keyword);
+            return productDetaillist;
+
+        }
+        public List<ProductDetail> ProductListHomePage()
+        {
+
+            var productDetaillist = new List<ProductDetail>();
+            productDetaillist = _flipkart.AllOffer(); 
+            return productDetaillist;
 
         }
     }

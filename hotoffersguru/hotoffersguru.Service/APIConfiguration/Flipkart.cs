@@ -14,7 +14,7 @@ using AutoMapper;
 
 namespace hotoffersguru.Service.APIConfiguration
 {
-    public class Flipkart 
+    public class Flipkart : IFlipkart
     {
         public const string baseUrl = "https://affiliate-api.flipkart.net/affiliate/";
         public const string AffiliatedID = "shopforgirlfr";

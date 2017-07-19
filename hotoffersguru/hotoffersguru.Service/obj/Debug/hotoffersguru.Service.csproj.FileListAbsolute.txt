@@ -1,13 +1,13 @@
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Service.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Service.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\AutoMapper.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Data.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Entity.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\Newtonsoft.Json.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Data.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Entity.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\AutoMapper.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\Newtonsoft.Json.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Debug\hotoffersguru.Service.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Debug\hotoffersguru.Service.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Debug\hotoffersguru.Service.pdb
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\AutoMapper.dll
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\AutoMapper.xml

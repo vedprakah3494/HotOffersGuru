@@ -1,21 +1,22 @@
 ﻿using hotoffersguru.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace hotoffersguru.Areas.Portal.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IProductService _productService;
+        public HomeController(IProductService productService)
+        {
+            _productService = productService;
+
+        }
         // GET: Portal/Home
         public ActionResult Index()
         {
-            ProductService productService = new ProductService();
-            productService.GetProductDetail();
-            productService.GetProductDetailByKeword();
-            return View();
+           var Productlist= _productService.GetProductDetail();
+            //productService.GetProductDetailByKeword();
+            return View(Productlist);
         }
 
         // GET: Portal/Home/Details/5
