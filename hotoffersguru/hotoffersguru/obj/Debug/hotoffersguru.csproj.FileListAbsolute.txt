@@ -64,3 +64,4 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.J
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache

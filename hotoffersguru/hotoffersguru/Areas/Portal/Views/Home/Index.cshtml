@@ -1,7 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/Portal/Views/Shared/__LayoutHome.cshtml";
+    ViewBag.Title = "HotOffersGuru";
+    Layout = "~/Areas/Portal/Views/Shared/__Layout.cshtml";
 }
+<div class="row">
+    @{ Html.RenderPartial("_ProductList"); }
+    @{ Html.RenderPartial("_CategoryDetail"); }
+</div>
+
 
 

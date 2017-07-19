@@ -240,8 +240,9 @@
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.woff" />
     <Content Include="Areas\Portal\Content\assets\fonts\themifyd41d.eot" />
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\__LayoutHome.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_LayoutCategory.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\__Layout.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_CategoryDetail.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_ProductList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
