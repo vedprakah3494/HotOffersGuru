@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using hotoffersguru.Entity.ServiceEntity;
 
 namespace hotoffersguru.Service
 {
@@ -17,32 +18,36 @@ namespace hotoffersguru.Service
             _flipkart = flipkart;
 
         }
-        public List<ProductDetail> GetProductDetail()
+        public List<ProductDetail> GetProductsByCategory()
         {
 
             var productDetaillist = new List<ProductDetail>();
             string category = "bags wallets belts";
-            productDetaillist = _flipkart.getProductDetailFlipkart(category);
+            productDetaillist = _flipkart.GetProductsByCatgegory(category);
             return productDetaillist;
 
         }
 
-        public List<ProductDetail> GetProductDetailByKeword()
+        public List<ProductDetail> GetProductsByKeyword()
         {
 
             var productDetaillist = new List<ProductDetail>();
             string keyword = "sony+mobiless";
-            productDetaillist = _flipkart.SearchProductDetailFlipkart(keyword);
+            productDetaillist = _flipkart.GetProductByKeword(keyword);
             return productDetaillist;
 
         }
-        public List<ProductDetail> ProductListHomePage()
+        public FlipkartOffers GetAllOffers()
         {
-
-            var productDetaillist = new List<ProductDetail>();
-            productDetaillist = _flipkart.AllOffer(); 
+            //var amazonOffer=
+           var productDetaillist = _flipkart.AllOffer(); 
             return productDetaillist;
 
+        }
+        public FlipkartDeals GetDealsOfTheDay()
+        {
+            var productDetaillist = _flipkart.GetDealOfTheDay();
+            return productDetaillist;
         }
     }
 }

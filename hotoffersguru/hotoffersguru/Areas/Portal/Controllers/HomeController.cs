@@ -1,5 +1,8 @@
-﻿using hotoffersguru.Service;
+﻿using System.Collections.Generic;
+using System.Dynamic;
+using hotoffersguru.Service;
 using System.Web.Mvc;
+using hotoffersguru.Entity.Models;
 
 namespace hotoffersguru.Areas.Portal.Controllers
 {
@@ -11,84 +14,27 @@ namespace hotoffersguru.Areas.Portal.Controllers
             _productService = productService;
 
         }
-        // GET: Portal/Home
         public ActionResult Index()
         {
-           var Productlist= _productService.GetProductDetail();
-            //productService.GetProductDetailByKeword();
-            return View(Productlist);
-        }
-
-        // GET: Portal/Home/Details/5
-        public ActionResult Details(int id)
-        {
             return View();
         }
 
-        // GET: Portal/Home/Create
-        public ActionResult Create()
+        // GET: Portal/Home
+        public PartialViewResult ProductList()
         {
-            return View();
+            var productlist = _productService.GetDealsOfTheDay();
+            return PartialView("ProductList", productlist);
+        }
+        public PartialViewResult HotOfferslist()
+        {
+            var productlist = _productService.GetAllOffers();
+            return PartialView("HotOfferslist", productlist);
+        }
+        public PartialViewResult CategoryDetail()
+        {
+            return PartialView();
         }
 
-        // POST: Portal/Home/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Portal/Home/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Portal/Home/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Portal/Home/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Portal/Home/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

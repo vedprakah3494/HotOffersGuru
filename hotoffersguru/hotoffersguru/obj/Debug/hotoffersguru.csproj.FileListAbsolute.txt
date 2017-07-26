@@ -30,6 +30,7 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Pr
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.Unity.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Web.Infrastructure.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Nager.ArticleNumber.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.Helpers.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.Mvc.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.Razor.dll
@@ -39,6 +40,7 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.W
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Unity.Mvc5.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\WebActivatorEx.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.Json.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Nager.AmazonProductAdvertising.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\hotoffersguru.Data.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\hotoffersguru.Entity.pdb
@@ -49,8 +51,6 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.AI
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.AI.WindowsServer.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.ApplicationInsights.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.ServiceLocation.pdb
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.ServiceLocation.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.Unity.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.Unity.Configuration.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
@@ -62,6 +62,6 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.W
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.WebPages.Razor.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.Json.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.pdb
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache

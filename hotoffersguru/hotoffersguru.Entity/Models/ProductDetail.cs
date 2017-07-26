@@ -11,6 +11,8 @@ namespace hotoffersguru.Entity.Models
         public string ProductID { get; set; }
         public Productattributes ProductAttribute { get; set; }
         public CategoryDetail ProductCategory { get; set; }
+        public object[] Company { get; set; }
+
     }
 
     public class Productattributes
@@ -52,17 +54,12 @@ namespace hotoffersguru.Entity.Models
     public class Maximumretailprice
     {
         public float amount { get; set; }
-        public string currency { get; set; }
     }
 
     public class Sellingprice
     {
         public float amount { get; set; }
-        public string currency { get; set; }
     }
 
-    public class Productshippingbaseinfo
-    {
-        public object shippingOptions { get; set; }
-    }
+ 
 }

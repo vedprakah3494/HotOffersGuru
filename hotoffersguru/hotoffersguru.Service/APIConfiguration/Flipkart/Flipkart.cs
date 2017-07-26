@@ -20,7 +20,7 @@ namespace hotoffersguru.Service.APIConfiguration
         public const string AffiliatedID = "shopforgirlfr";
         public const string TokenID = "770b29ed2fa240b3978c2a2b744d90f5";
 
-        public List<ProductDetail> getProductDetailFlipkart(string CategoryName)
+        public List<ProductDetail> GetProductsByCatgegory(string CategoryName)
         {
              HttpClient client = new HttpClient();
 
@@ -28,28 +28,32 @@ namespace hotoffersguru.Service.APIConfiguration
 
             try
             {
-                var categorydetail = getCategoryDetailFlipkart().Where(m => m.CategoryName.Contains(CategoryName)).FirstOrDefault().CategoryURl.Replace(baseUrl,"");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.BaseAddress = new Uri(baseUrl);
-                client.DefaultRequestHeaders.Add("Fk-Affiliate-Id", AffiliatedID);
-                client.DefaultRequestHeaders.Add("Fk-Affiliate-Token", TokenID);
-
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                var ProductDetailresponse = client.GetAsync(categorydetail).Result;
-                if (ProductDetailresponse.IsSuccessStatusCode)
+                var firstOrDefault = getCategoryDetailFlipkart().FirstOrDefault(m => m.CategoryName.Contains(CategoryName));
+                if (firstOrDefault != null)
                 {
-                    var productListresponse = ProductDetailresponse.Content.ReadAsStringAsync().Result;
-                    var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
-                    foreach(var product in productlist.productInfoList)
+                    var categorydetail = firstOrDefault.CategoryURl.Replace(baseUrl,"");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.BaseAddress = new Uri(baseUrl);
+                    client.DefaultRequestHeaders.Add("Fk-Affiliate-Id", AffiliatedID);
+                    client.DefaultRequestHeaders.Add("Fk-Affiliate-Token", TokenID);
+
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                    var productDetailresponse = client.GetAsync(categorydetail).Result;
+                    if (productDetailresponse.IsSuccessStatusCode)
                     {
-                         var productdetail = new ProductDetail();
-                         Mapper.Map<hotoffersguru.Entity.ServiceEntity.Productattributes, hotoffersguru.Entity.Models.Productattributes>(product.productBaseInfo.productAttributes,productdetail.ProductAttribute);
-                        productdetail.ProductCategory.CategoryName = product.productBaseInfo.productIdentifier.categoryPaths.categoryPath[0][0].title;
-                        productdetail.ProductID = product.productBaseInfo.productIdentifier.productId;
+                        var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
+                        var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
+                        foreach(var product in productlist.productInfoList)
+                        {
+                            var productdetail = new ProductDetail();
+                            Mapper.Map<hotoffersguru.Entity.ServiceEntity.Productattributes, hotoffersguru.Entity.Models.Productattributes>(product.productBaseInfo.productAttributes,productdetail.ProductAttribute);
+                            productdetail.ProductCategory.CategoryName = product.productBaseInfo.productIdentifier.categoryPaths.categoryPath[0][0].title;
+                            productdetail.ProductID = product.productBaseInfo.productIdentifier.productId;
                      
+                        }
+
                     }
-
                 }
             }
             catch (Exception ex)
@@ -63,7 +67,7 @@ namespace hotoffersguru.Service.APIConfiguration
             return productDetailList;
         }
 
-        public List<ProductDetail> SearchProductDetailFlipkart(string SearchKeyword,int resultItem=10)
+        public List<ProductDetail> GetProductByKeword(string searchKeyword,int resultItem=10)
         {
             HttpClient client = new HttpClient();
 
@@ -78,10 +82,10 @@ namespace hotoffersguru.Service.APIConfiguration
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var ProductDetailresponse = client.GetAsync("search/json?query="+SearchKeyword+"&resultCount="+resultItem).Result;
-                if (ProductDetailresponse.IsSuccessStatusCode)
+                var productDetailresponse = client.GetAsync("search/json?query="+searchKeyword+"&resultCount="+resultItem).Result;
+                if (productDetailresponse.IsSuccessStatusCode)
                 {
-                    var productListresponse = ProductDetailresponse.Content.ReadAsStringAsync().Result;
+                    var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
                     var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
 
 
@@ -98,11 +102,11 @@ namespace hotoffersguru.Service.APIConfiguration
             return productDetailList;
         }
 
-        public List<ProductDetail> AllOffer()
+        public FlipkartOffers AllOffer()
         {
             HttpClient client = new HttpClient();
 
-            var productDetailList = new List<ProductDetail>();
+            var hotOffersList = new FlipkartOffers();
 
             try
             {
@@ -113,11 +117,11 @@ namespace hotoffersguru.Service.APIConfiguration
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var ProductDetailresponse = client.GetAsync("offers/v1/all/json").Result;
-                if (ProductDetailresponse.IsSuccessStatusCode)
+                var productDetailresponse = client.GetAsync("offers/v1/all/json").Result;
+                if (productDetailresponse.IsSuccessStatusCode)
                 {
-                    var productListresponse = ProductDetailresponse.Content.ReadAsStringAsync().Result;
-                    var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
+                    var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
+                    hotOffersList = JsonConvert.DeserializeObject<FlipkartOffers>(productListresponse);
 
 
                 }
@@ -130,14 +134,14 @@ namespace hotoffersguru.Service.APIConfiguration
                 client.Dispose();
 
             }
-            return productDetailList;
+            return hotOffersList;
         }
 
-        public List<ProductDetail> DealOfTheDay()
+        public FlipkartDeals GetDealOfTheDay()
         {
             HttpClient client = new HttpClient();
 
-            var productDetailList = new List<ProductDetail>();
+            var productDetailList = new FlipkartDeals();
             try
             {
                 client.DefaultRequestHeaders.Accept.Clear();
@@ -147,11 +151,11 @@ namespace hotoffersguru.Service.APIConfiguration
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var ProductDetailresponse = client.GetAsync("offers/v1/dotd/json").Result;
-                if (ProductDetailresponse.IsSuccessStatusCode)
+                var productDetailresponse = client.GetAsync("offers/v1/dotd/json").Result;
+                if (productDetailresponse.IsSuccessStatusCode)
                 {
-                    var productListresponse = ProductDetailresponse.Content.ReadAsStringAsync().Result;
-                    var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
+                    var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
+                     productDetailList = JsonConvert.DeserializeObject<FlipkartDeals>(productListresponse);
 
 
                 }
@@ -188,9 +192,12 @@ namespace hotoffersguru.Service.APIConfiguration
                     foreach (var resultobject in result["apiGroups"]["affiliate"]["apiListings"])
                     {
                         var categoryDetail = new CategoryDetail();
-                        var abc = resultobject.SingleOrDefault();
-                        categoryDetail.CategoryURl = abc["availableVariants"]["v0.1.0"]["get"].ToString();
-                        categoryDetail.CategoryName = abc["availableVariants"]["v0.1.0"]["resourceName"].ToString().Replace("_", " ");
+                        var categorylist = resultobject.SingleOrDefault();
+                        if (categorylist != null)
+                        {
+                            categoryDetail.CategoryURl = categorylist["availableVariants"]["v0.1.0"]["get"].ToString();
+                            categoryDetail.CategoryName = categorylist["availableVariants"]["v0.1.0"]["resourceName"].ToString().Replace("_", " ");
+                        }
                         categoryDetaillist.Add(categoryDetail);
 
                     }

@@ -3,6 +3,8 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debu
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\AutoMapper.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Data.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Entity.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\Nager.AmazonProductAdvertising.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\Nager.ArticleNumber.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\Newtonsoft.Json.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Data.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Debug\hotoffersguru.Entity.pdb
