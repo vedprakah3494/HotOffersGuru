@@ -1,0 +1,48 @@
+﻿@model IEnumerable<hotoffersguru.Entity.Models.ProductDetail>
+    <div id="ending" class="tab-pane counties-pane animated fadeIn">
+        <div class="row">
+           
+            @foreach (var item in Model)
+            {
+            <div class="col-sm-4">
+                <div class="widget">
+                    <div class="coupon-block">
+                        <a class="coupon-image bg-image" href="#" title="" data-image-src="@item.ProductAttribute.imageUrls._800x800"></a>
+                        <div class="coupon-value" content="40%">
+                            @item.ProductAttribute.productDescription
+                        </div>
+                        <h4 class="coupon-title" style="min-height:80px">
+                            <a href="@offer.url">@item.ProductAttribute.title</a>
+                        </h4>
+                        <a href="@offer.url">
+                            <div class="action-block">
+                                <p class="btn-code">
+                                    <span class="btn-hover">GBRAB OFFER</span>
+                                </p>
+
+                            </div>
+                        </a>
+                     
+                    </div>
+                    <!--//coupon block -->
+                </div>
+            </div>
+
+            }
+            
+
+
+        </div>
+        <ul class="pagination pagination-lg m-t-0">
+            <li>
+                <a href="#"> <i class="ti-arrow-left"></i> </a>
+            </li>
+            <li> <a href="#">1</a> </li>
+            <li class="active"> <a href="#">2</a> </li>
+            <li> <a href="#">3</a> </li>
+            <li> <a href="#">4</a> </li>
+            <li>
+                <a href="#"> <i class="ti-arrow-right"></i> </a>
+            </li>
+        </ul>
+    </div>

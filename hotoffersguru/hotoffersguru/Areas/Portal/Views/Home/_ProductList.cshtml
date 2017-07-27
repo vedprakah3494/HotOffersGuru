@@ -1,22 +1,19 @@
-﻿@using hotoffersguru.Entity.ServiceEntity
-@model hotoffersguru.Entity.ServiceEntity.FlipkartDeals
-
+﻿@model IEnumerable<hotoffersguru.Entity.Models.ProductDetail>
 
 <div id="popular" class="tab-pane counties-pane active animated fadeIn">
     <div class="row">
         @{
-            foreach (var product in Model.dotdList.ToList())
+            foreach (var item in Model)
             {
-
 
                 <div class="col-sm-4">
                     <div class="widget">
                         <div class="coupon-block equal">
-                            <a class="coupon-image bg-image" href="#" title="" data-image-src="@product.imageUrls[0].url"></a>
-                            <div class="coupon-value" content="40%">@product.description</div>
-                            <h4 class="coupon-title"  style="min-height:100px"><a href="#">@product.title</a></h4>
+                            <a class="coupon-image bg-image" href="#" title="" data-image-src="@item.ProductAttribute.imageUrls._800x800"></a>
+                            <div class="coupon-value" content="40%">@item.ProductAttribute.productDescription</div>
+                            <h4 class="coupon-title"  style="min-height:100px"><a href="#">@item.ProductAttribute.imageUrls</a></h4>
                             <div class="action-block">
-                                <a href="@product.url">
+                                <a href="@item.ProductAttribute.productUrl">
                                     <p class="btn-code" data-type="code" data-link="">
                                         <span class="partial-code">FLIPKART</span> <span class="btn-hover">GRAB DEAL</span>
                                     </p>

@@ -3,6 +3,7 @@ using System.Dynamic;
 using hotoffersguru.Service;
 using System.Web.Mvc;
 using hotoffersguru.Entity.Models;
+using hotoffersguru.Service.Services;
 
 namespace hotoffersguru.Areas.Portal.Controllers
 {
@@ -22,13 +23,13 @@ namespace hotoffersguru.Areas.Portal.Controllers
         // GET: Portal/Home
         public PartialViewResult ProductList()
         {
-            var productlist = _productService.GetDealsOfTheDay();
-            return PartialView("ProductList", productlist);
+            var productlist = _productService.DiscountDeals();
+            return PartialView("_ProductList", productlist);
         }
-        public PartialViewResult HotOfferslist()
+        public PartialViewResult HotOffersList()
         {
             var productlist = _productService.GetAllOffers();
-            return PartialView("HotOfferslist", productlist);
+            return PartialView("_HotOffersList", productlist);
         }
         public PartialViewResult CategoryDetail()
         {

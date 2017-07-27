@@ -1,19 +1,23 @@
-﻿using hotoffersguru.Entity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using AutoMapper;
 using hotoffersguru.Entity.Models;
 using hotoffersguru.Entity.ServiceEntity;
-using AutoMapper;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
-namespace hotoffersguru.Service.APIConfiguration
+namespace hotoffersguru.Service.APIConfiguration.Flipkart
 {
+    public interface IFlipkart
+    {
+        FlipkartOffers AllOffer();
+        FlipkartDeals GetDealOfTheDay();
+        List<ProductDetail> GetProductsByCatgegory(string categoryName);
+        List<ProductDetail> GetProductByKeyword(string searchKeyword, int resultItem = 10);
+    }
     public class Flipkart : IFlipkart
     {
         public const string baseUrl = "https://affiliate-api.flipkart.net/affiliate/";
@@ -67,7 +71,7 @@ namespace hotoffersguru.Service.APIConfiguration
             return productDetailList;
         }
 
-        public List<ProductDetail> GetProductByKeword(string searchKeyword,int resultItem=10)
+        public List<ProductDetail> GetProductByKeyword(string searchKeyword,int resultItem=10)
         {
             HttpClient client = new HttpClient();
 

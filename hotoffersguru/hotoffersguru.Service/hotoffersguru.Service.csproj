@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="APIConfiguration\Amazon\Amazon.cs" />
     <Compile Include="APIConfiguration\Flipkart\Flipkart.cs" />
-    <Compile Include="APIConfiguration\Flipkart\IFlipkart.cs" />
     <Compile Include="Common\CompanyName.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\ProductService.cs" />

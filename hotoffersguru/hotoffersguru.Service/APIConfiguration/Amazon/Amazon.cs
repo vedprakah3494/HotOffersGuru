@@ -5,7 +5,13 @@ using Nager.AmazonProductAdvertising.Model;
 
 namespace hotoffersguru.Service.APIConfiguration.Amazon
 {
-    class Amazon
+    public interface IAmazon
+    {
+        List<ProductDetail> DiscountDeals();
+        List<ProductDetail> AllOffer(AmazonSearchIndex amzonAmazonSearchIndex, AmazonResponseGroup amazonResponseGroup);
+    }
+
+    public class Amazon : IAmazon
     {
         readonly AmazonAuthentication _authentication = new AmazonAuthentication();
         private const string AssociateTag = "hotoffersguru-21";
@@ -21,6 +27,14 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
             var productlist = new List<ProductDetail>();
             var wrapper = new AmazonWrapper(_authentication, AmazonEndpoint.IN, AssociateTag);
             var result = wrapper.Search("canon eos", amzonAmazonSearchIndex, amazonResponseGroup);
+            return productlist;
+        }
+        public List<ProductDetail> DiscountDeals()
+        {
+            var productlist = new List<ProductDetail>();
+            var wrapper = new AmazonWrapper(_authentication, AmazonEndpoint.IN, AssociateTag);
+            var responseGroup = AmazonResponseGroup.ItemAttributes | AmazonResponseGroup.Images|AmazonResponseGroup.Offers;
+            var result = wrapper.Search("canon eos", AmazonSearchIndex.All, responseGroup);
             return productlist;
         }
 

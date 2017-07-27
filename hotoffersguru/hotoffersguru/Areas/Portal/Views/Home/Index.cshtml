@@ -6,19 +6,22 @@
 <div class="row">
     <div class="col-lg-9">
         <ul class="nav nav-tabs responsive-tabs" id="myTab">
-            <li class="active"><a data-toggle="tab" href="#popular"><i class="ti-bar-chart"></i>Deals Of Day </a> </li>
-            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>Hot Offers</a> </li>
+            <li class="active"><a data-toggle="tab" href="#popular"><i class="ti-bar-chart"></i>Hot Offers</a> </li>
+            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>Upto 30%  Discount</a> </li>
+            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>Upto 50%  Discount</a> </li>
+            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>More than 50%  Discount</a> </li>
+
         </ul>
         <div class="tab-content clearfix" id="myTabContent">
-            @{ Html.RenderAction("ProductList"); }
-            @{ Html.RenderAction("HotOfferslist"); }
+            @{ Html.RenderAction("_ProductList"); }
+            @{ Html.RenderAction("_HotOfferslist"); }
 
 
         </div>
        
 
     </div>
-    @{ Html.RenderPartial("CategoryDetail"); }
+    @{ Html.RenderPartial("_CategoryDetail"); }
 </div>
 
 

@@ -2,12 +2,12 @@
 using hotoffersguru.Entity.Models;
 using hotoffersguru.Entity.ServiceEntity;
 
-namespace hotoffersguru.Service
+namespace hotoffersguru.Service.Services
 {
     public interface IProductService
     {
-        FlipkartOffers GetAllOffers();
-        FlipkartDeals GetDealsOfTheDay();
+        List<ProductDetail> GetAllOffers();
+        List<ProductDetail> DiscountDeals();
         List<ProductDetail> GetProductsByCategory();
         List<ProductDetail> GetProductsByKeyword();
     }
