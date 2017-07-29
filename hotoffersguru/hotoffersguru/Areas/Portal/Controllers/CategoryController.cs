@@ -19,7 +19,7 @@ namespace hotoffersguru.Areas.Portal.Controllers
         public ActionResult ProductByCategory(string CategoryName)
         {
             var categoryList = new List<string>();
-            categoryList.Add(CategoryName);
+            categoryList = CategoryName.Split(',').ToList();
             var productlist = _productService.GetProductsByCategory(categoryList);
             return PartialView("_ProductByCategory", productlist);
         }
