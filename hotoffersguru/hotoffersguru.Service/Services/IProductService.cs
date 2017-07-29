@@ -6,9 +6,9 @@ namespace hotoffersguru.Service.Services
 {
     public interface IProductService
     {
+        List<ProductDetail> GetAllOffersByStoreName(string storeName);
         List<ProductDetail> GetAllOffers();
         List<ProductDetail> DiscountDeals(double maxpercentageDiscount, double percentageDiscount);
-        List<ProductDetail> GetProductsByCategory(List<string> category);
-        List<ProductDetail> GetProductsByKeyword(string keyword);
+        List<ProductDetail> GetProductsByKeyword(List<string> keyword);
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace hotoffersguru.Areas.Portal.Controllers
 {
@@ -15,12 +16,12 @@ namespace hotoffersguru.Areas.Portal.Controllers
             _productService = productService;
 
         }
-       
+        [OutputCache(Duration = 3600, VaryByParam = "CategoryName")]
         public ActionResult ProductByCategory(string CategoryName)
         {
             var categoryList = new List<string>();
             categoryList = CategoryName.Split(',').ToList();
-            var productlist = _productService.GetProductsByCategory(categoryList);
+            var productlist = _productService.GetProductsByKeyword(categoryList);
             return PartialView("_ProductByCategory", productlist);
         }
     }

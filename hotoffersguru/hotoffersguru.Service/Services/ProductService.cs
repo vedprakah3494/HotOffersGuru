@@ -23,26 +23,42 @@ namespace hotoffersguru.Service
             _amazon = amazon;
 
         }
-        public List<ProductDetail> GetProductsByCategory(List<string> category)
+        public List<ProductDetail> GetAllOffersByStoreName(string storeName)
         {
-            var productDetaillist = _amazon.GetProductsByCatgegory(category);
-            return productDetaillist;
-        }
+            var productDetaillist = new List<ProductDetail>();
+            if (storeName == "AZ")
+            {
 
-        public List<ProductDetail> GetProductsByKeyword(string keyword)
+                productDetaillist.AddRange(_amazon.AllOffer());
+
+            }
+            else if (storeName == "FK")
+            {
+
+                productDetaillist.AddRange(_flipkart.AllOffer());
+
+            }
+            return productDetaillist.OrderByDescending(x => x.ProductAttribute.discountPercentage).ToList();
+
+        }
+        public List<ProductDetail> GetProductsByKeyword(List<string> keywordluList)
         {
-            var productDetaillist = _flipkart.GetProductByKeyword(keyword);
-            return productDetaillist;
+            var productDetaillist = new List<ProductDetail>();
+            productDetaillist.AddRange(_amazon.GetProductByKeyword(keywordluList));
+            productDetaillist.AddRange(_flipkart.GetProductByKeyword(keywordluList));
+            return productDetaillist.OrderByDescending(x => x.ProductAttribute.discountPercentage).ToList();
         }
         public List<ProductDetail> GetAllOffers()
         {
-            var productDetaillist = _amazon.AllOffer();
-            return productDetaillist;
+            var productDetaillist = new List<ProductDetail>();
+            productDetaillist.AddRange(_amazon.AllOffer());
+            productDetaillist.AddRange(_flipkart.AllOffer());
+            return productDetaillist.OrderByDescending(x => x.ProductAttribute.discountPercentage).ToList();
 
         }
         public List<ProductDetail> DiscountDeals(double maxpercentageDiscount, double minpercentageDiscount)
         {
-            var amazonproductlist = _amazon.AllOffer().Where(x=>Convert.ToDouble(x.ProductAttribute.discountPercentage)>minpercentageDiscount && Convert.ToDouble(x.ProductAttribute.discountPercentage) <maxpercentageDiscount);
+            var amazonproductlist = _amazon.AllOffer().Where(x => Convert.ToDouble(x.ProductAttribute.discountPercentage) > minpercentageDiscount && Convert.ToDouble(x.ProductAttribute.discountPercentage) < maxpercentageDiscount);
             var productDetaillist = amazonproductlist.ToList();
             return productDetaillist;
         }

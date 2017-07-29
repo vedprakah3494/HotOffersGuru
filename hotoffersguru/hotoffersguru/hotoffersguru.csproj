@@ -181,15 +181,6 @@
     <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular.html" />
     <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.svg" />
-    <Content Include="Areas\Portal\Content\assets\images\amazon-logo-small.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal1.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal2.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal4.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal5.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal6.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal7.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal8.jpg" />
     <Content Include="Areas\Portal\Content\assets\images\logo.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\amz-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\ax-icon.png" />
@@ -197,35 +188,6 @@
     <Content Include="Areas\Portal\Content\assets\images\payment\mst-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mstr-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\paypal-icon.png" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-01.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-02.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-03.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_2.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_4.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_5.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-4.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-5.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-6.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb10.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb11.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb12.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb13.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb14.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb15.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb2.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb3.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb4.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb5.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb6.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb8.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB2.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB7.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB8.png" />
     <Content Include="Areas\Portal\Content\assets\js\animsition.min.js" />
     <Content Include="Areas\Portal\Content\assets\js\bootstrap.min.js" />
     <Content Include="Areas\Portal\Content\assets\js\jquery.min.js" />
@@ -233,6 +195,8 @@
     <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.carousel.css" />
     <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.video.play.html" />
     <Content Include="Areas\Portal\Content\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Areas\Portal\Content\StoreLogo\azlogo.png" />
+    <Content Include="Areas\Portal\Content\StoreLogo\fklogo.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -268,6 +232,9 @@
     <Content Include="Areas\Portal\Views\Category\_ProductByCategory.cshtml" />
     <None Include="Areas\Portal\Views\Home\_HotOffersList.cshtml" />
     <Content Include="Areas\Portal\Views\Home\_HomeCategory.cshtml" />
+    <Content Include="Areas\Portal\Views\Store\ProductsbyStore.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_CategoryMenu.cshtml" />
+    <Content Include="Areas\Portal\Views\Store\_ProductsbyStore.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -282,8 +249,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Portal\Models\" />
-    <Folder Include="Areas\Portal\Views\Comany\" />
-    <Folder Include="Areas\Portal\Views\Store\" />
+    <Folder Include="Content\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

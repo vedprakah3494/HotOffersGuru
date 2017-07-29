@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using hotoffersguru.Entity.Models;
-using hotoffersguru.Service.Common;
 using Nager.AmazonProductAdvertising;
 using Nager.AmazonProductAdvertising.Model;
-using CompanyName = hotoffersguru.Entity.Common.CompanyName;
 
 namespace hotoffersguru.Service.APIConfiguration.Amazon
 {
     public interface IAmazon
     {
         List<ProductDetail> AllOffer();
-        List<ProductDetail> GetProductsByCatgegory(List<string> categoryName);
-        List<ProductDetail> GetProductByKeyword(string searchKeyword, int resultItem = 10);
+        List<ProductDetail> GetProductByKeyword(List<string> categoryName, int resultItem = 10);
     }
 
     public class Amazon : IAmazon
     {
         readonly AmazonAuthentication _authentication = new AmazonAuthentication();
         private const string AssociateTag = "hotoffersguru-21";
+        private static string StoreUrl = "localhost:3529/Areas/Portal/Content/StoreLogo/azlogo.png";
         List<string> CategoryList = new List<string>();
 
         public Amazon()
@@ -37,7 +35,7 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
         }
 
 
-        public List<ProductDetail> GetProductsByCatgegory(List<string> categoryName)
+        public List<ProductDetail> GetProductByKeyword(List<string> categoryName,int resultItem=10)
         {
             var productlist = new List<ProductDetail>();
             var wrapper = new AmazonWrapper(_authentication, AmazonEndpoint.IN, AssociateTag);
@@ -56,10 +54,7 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
             return productlist;
         }
 
-        public List<ProductDetail> GetProductByKeyword(string searchKeyword, int resultItem = 10)
-        {
-            throw new NotImplementedException();
-        }
+
         public List<ProductDetail> AllOffer()
         {
 
@@ -85,8 +80,8 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
             foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null ))
             {
                 var productdetail = new ProductDetail();
-                productdetail.Company = new CompanyName[3];
-                productdetail.Company[0] = (CompanyName)Common.CompanyName.Amazon;
+                productdetail.StoreCode = "AZ";
+                productdetail.StoreLogoUrl = StoreUrl;
                 productdetail.ProductAttribute = new Productattributes();
 
                 productdetail.ProductAttribute.title = item.ItemAttributes.Title;
@@ -145,8 +140,8 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
             foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null && m.Offers.Offer.Length > 0 && m.Offers.Offer[0].OfferListing != null && m.Offers.Offer[0].OfferListing[0].PercentageSaved != null))
             {
                 var productdetail = new ProductDetail();
-                productdetail.Company = new CompanyName[3];
-                productdetail.Company[0] = (CompanyName)Common.CompanyName.Amazon;
+                productdetail.StoreCode = "AZ";
+                productdetail.StoreLogoUrl = StoreUrl;
                 productdetail.ProductAttribute = new Productattributes();
 
                 productdetail.ProductAttribute.title = item.ItemAttributes.Title;

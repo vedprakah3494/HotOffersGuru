@@ -65,22 +65,25 @@
                     <div id="navigation">
                         <!-- Navigation Menu-->
                         <ul class="navigation-menu">
-                            <li class="active"> <a href="#"><i class="ti-home"></i> <span> Home </span> </a> </li>
+                            <li class="active">
+                                @Html.ActionLink("Home","Index", new { controller = "Home"})
+                            </li>
                             <li class="has-submenu">
                                 <a href="#"><i></i> <span> Top Category </span> </a>
                                 <ul class="submenu">
-                                    <li><a href="#">Mobile, Tablets & Accessories</a> </li>
-                                    <li><a href="#">Laptops & Peripherals</a> </li>
-                                    <li><a href="#">TV & Entertainment Devices</a> </li>
-
+                                    @Html.Partial("_CategoryMenu")
                                 </ul>
                             </li>
                             
                             <li class="has-submenu">
                                 <a href="#"><i></i> <span>Offers & Coupon Code </span> </a>
                                 <ul class="submenu">
-                                    <li><a href="#">Amazon</a> </li>
-                                    <li><a href="#">Flipkart</a> </li>
+                                    <li>
+                                        @Html.ActionLink("Amazon", "ProductsbyStore", new { controller = "Store", StoreName = "AZ" })
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Flipkart", "ProductsbyStore", new { controller = "Store", StoreName = "FK" })
+                                    </li>
 
                                 </ul>
                             </li>
@@ -97,6 +100,7 @@
                 </div>
             </div>
         </header>
+       
     <div class="wrapper">
     <div class="container">
    

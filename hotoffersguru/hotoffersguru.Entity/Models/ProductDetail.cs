@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using hotoffersguru.Entity.Common;
 
 namespace hotoffersguru.Entity.Models
 {
@@ -13,7 +12,9 @@ namespace hotoffersguru.Entity.Models
         public string ProductID { get; set; }
         public Productattributes ProductAttribute { get; set; }
         public CategoryDetail ProductCategory { get; set; }
-        public CompanyName[] Company { get; set; }
+        public string StoreCode { get; set; }
+        public string StoreLogoUrl { get; set; }
+
 
     }
 

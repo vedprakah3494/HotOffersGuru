@@ -8,21 +8,24 @@ using hotoffersguru.Entity.Models;
 using hotoffersguru.Entity.ServiceEntity;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Web.Configuration;
+using System.Configuration;
 
 namespace hotoffersguru.Service.APIConfiguration.Flipkart
 {
     public interface IFlipkart
     {
-        FlipkartOffers AllOffer();
-        FlipkartDeals GetDealOfTheDay();
+        List<ProductDetail> AllOffer();
         List<ProductDetail> GetProductsByCatgegory(string categoryName);
-        List<ProductDetail> GetProductByKeyword(string searchKeyword, int resultItem = 10);
+        List<ProductDetail> GetProductByKeyword(List<string> searchKeyword, int resultItem = 10);
     }
     public class Flipkart : IFlipkart
     {
         public const string baseUrl = "https://affiliate-api.flipkart.net/affiliate/";
         public const string AffiliatedID = "shopforgirlfr";
         public const string TokenID = "770b29ed2fa240b3978c2a2b744d90f5";
+        private static string StoreUrl = "localhost:3529/Areas/Portal/Content/StoreLogo/fklogo.png";
+        private string hotoffercategory = "Mobile phones,Head Phones,Women Fashion,Men Jeans,Men T-shirt";//ConfigurationManager.AppSettings["hotoffercategory"].ToString();
 
         public List<ProductDetail> GetProductsByCatgegory(string CategoryName)
         {
@@ -71,7 +74,7 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
             return productDetailList;
         }
 
-        public List<ProductDetail> GetProductByKeyword(string searchKeyword,int resultItem=10)
+        public List<ProductDetail> GetProductByKeyword(List<string>searchKeyword,int resultItem=10)
         {
             HttpClient client = new HttpClient();
 
@@ -86,13 +89,50 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var productDetailresponse = client.GetAsync("search/json?query="+searchKeyword+"&resultCount="+resultItem).Result;
-                if (productDetailresponse.IsSuccessStatusCode)
+                foreach (var keyword in searchKeyword)
                 {
-                    var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
-                    var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
-
-
+                    var productDetailresponse = client
+                        .GetAsync("search/json?query=" + keyword + "&resultCount=" + resultItem).Result;
+                    if (productDetailresponse.IsSuccessStatusCode)
+                    {
+                        var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
+                        var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
+                        foreach (var pro in productlist.productInfoList.Where(
+                            x => x.productBaseInfo.productAttributes.imageUrls != null))
+                        {
+                            var productdetail = new ProductDetail();
+                            productdetail.ProductID = pro.productBaseInfo.productIdentifier.productId;
+                            productdetail.StoreCode = "FK";
+                            productdetail.StoreLogoUrl = StoreUrl;
+                            productdetail.ProductAttribute=new Entity.Models.Productattributes();
+                            productdetail.ProductAttribute.imageUrls=new Entity.Models.Imageurls();
+                            if (pro.productBaseInfo.productAttributes.imageUrls.unknown != null)
+                            {
+                                productdetail.ProductAttribute.imageUrls.LargeImage =
+                                    pro.productBaseInfo.productAttributes.imageUrls.unknown;
+                            }
+                            if (pro.productBaseInfo.productAttributes.imageUrls.unknown != null)
+                            {
+                                productdetail.ProductAttribute.imageUrls.MediumImage =
+                                    pro.productBaseInfo.productAttributes.imageUrls?._400x400;
+                            }
+                            productdetail.ProductAttribute.maximumRetailPrice = "₹" +
+                                                                                pro.productBaseInfo.productAttributes
+                                                                                    .maximumRetailPrice.amount
+                                                                                    .ToString();
+                            productdetail.ProductAttribute.sellingPrice =
+                                "₹" + pro.productBaseInfo.productAttributes.sellingPrice.amount.ToString();
+                            productdetail.ProductAttribute.discountPercentage =
+                                pro.productBaseInfo.productAttributes.discountPercentage.ToString();
+                            productdetail.ProductAttribute.savedAmount =
+                            (pro.productBaseInfo.productAttributes.maximumRetailPrice.amount -
+                             pro.productBaseInfo.productAttributes.sellingPrice.amount).ToString();
+                            productdetail.ProductAttribute.productUrl =
+                                pro.productBaseInfo.productAttributes.productUrl;
+                            productdetail.ProductAttribute.title = pro.productBaseInfo.productAttributes.title;
+                            productDetailList.Add(productdetail);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -106,7 +146,16 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
             return productDetailList;
         }
 
-        public FlipkartOffers AllOffer()
+        public List<ProductDetail> AllOffer()
+        {
+            var productlist = new List<ProductDetail>();
+            List<string> hotoffercategorylist = hotoffercategory.Split(',').ToList();
+            productlist.AddRange(GetProductByKeyword(hotoffercategorylist));                     
+            
+            return productlist;
+        }
+
+        private FlipkartOffers AllOfferbyFlipkart()
         {
             HttpClient client = new HttpClient();
 
@@ -141,7 +190,7 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
             return hotOffersList;
         }
 
-        public FlipkartDeals GetDealOfTheDay()
+        private FlipkartDeals GetDealOfTheDay()
         {
             HttpClient client = new HttpClient();
 

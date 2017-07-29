@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.UI;
 using hotoffersguru.Service.Services;
 
 namespace hotoffersguru.Areas.Portal.Controllers
@@ -25,12 +26,14 @@ namespace hotoffersguru.Areas.Portal.Controllers
             return PartialView("_HotOffersList", productlist);
         }
         // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "CategoryName")]
+
         public PartialViewResult HomeCategory(string CategoryName)
         {
             ViewBag.TabID = CategoryName.Replace(" ","").Trim();
             var categoryList = new List<string>();
             categoryList.Add(CategoryName);
-            var productlist = _productService.GetProductsByCategory(categoryList);
+            var productlist = _productService.GetProductsByKeyword(categoryList);
             return PartialView("_HomeCategory", productlist);
         }
 
