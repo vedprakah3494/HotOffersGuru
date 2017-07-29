@@ -250,8 +250,10 @@
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Shared\__Layout.cshtml" />
     <Content Include="Areas\Portal\Views\Home\_CategoryDetail.cshtml" />
-    <None Include="Areas\Portal\Views\Home\_ProductList.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_Computers.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_SpecialEvent.cshtml" />
     <None Include="Areas\Portal\Views\Home\_HotOffersList.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_Mobiles.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -7,19 +7,16 @@
     <div class="col-lg-9">
         <ul class="nav nav-tabs responsive-tabs" id="myTab">
             <li class="active"><a data-toggle="tab" href="#popular"><i class="ti-bar-chart"></i>Hot Offers</a> </li>
-            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>Upto 30%  Discount</a> </li>
-            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>Upto 50%  Discount</a> </li>
-            <li class=""><a data-toggle="tab" href="#ending"><i class="ti-timer"></i>More than 50%  Discount</a> </li>
-
+            <li class=""><a data-toggle="tab" href="#Mobiles"><i class="ti-timer"></i>Mobiles</a> </li>
+            <li class=""><a data-toggle="tab" href="#Computers"><i class="ti-timer"></i>Computers</a> </li>
+            <li class=""><a data-toggle="tab" href="#SpecialEvent"><i class="ti-timer"></i>Raksha Bandhan Special</a> </li>
         </ul>
         <div class="tab-content clearfix" id="myTabContent">
-            @{ Html.RenderAction("_ProductList"); }
-            @{ Html.RenderAction("_HotOfferslist"); }
-
-
+            @{ Html.RenderAction("HotOffersList"); }
+            @{ Html.RenderAction("Mobiles"); }
+            @{ Html.RenderAction("Computers"); }
+            @{ Html.RenderAction("SpecialEvent"); }
         </div>
-       
-
     </div>
     @{ Html.RenderPartial("_CategoryDetail"); }
 </div>

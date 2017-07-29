@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Dynamic;
-using hotoffersguru.Service;
-using System.Web.Mvc;
-using hotoffersguru.Entity.Models;
+﻿using System.Web.Mvc;
 using hotoffersguru.Service.Services;
 
 namespace hotoffersguru.Areas.Portal.Controllers
@@ -20,22 +16,34 @@ namespace hotoffersguru.Areas.Portal.Controllers
             return View();
         }
 
-        // GET: Portal/Home
-        public PartialViewResult ProductList()
-        {
-            var productlist = _productService.DiscountDeals();
-            return PartialView("_ProductList", productlist);
-        }
+        // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public PartialViewResult HotOffersList()
         {
             var productlist = _productService.GetAllOffers();
             return PartialView("_HotOffersList", productlist);
         }
-        public PartialViewResult CategoryDetail()
+        // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        public PartialViewResult Mobiles()
         {
-            return PartialView();
+            var productlist = _productService.GetProductsByCategory("Mobile Phones");
+            return PartialView("_Mobiles", productlist);
+        }
+        // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        public PartialViewResult Computers()
+        {
+            var productlist = _productService.GetProductsByCategory("Computers");
+            return PartialView("_Computers", productlist);
         }
 
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        public PartialViewResult SpecialEvent()
+        {
+            var productlist = _productService.GetProductsByCategory("Raksha Bandhan");
+            return PartialView("_SpecialEvent", productlist);
+        }
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<hotoffersguru.Entity.Models.ProductDetail>
 
-<div id="popular" class="tab-pane counties-pane active animated fadeIn">
+<div id="Computers" class="tab-pane counties-pane active animated fadeIn">
     <div class="row">
         @{
             foreach (var item in Model)
@@ -9,9 +9,10 @@
                 <div class="col-sm-4">
                     <div class="widget">
                         <div class="coupon-block equal">
-                            <a class="coupon-image bg-image" href="#" title="" data-image-src="@item.ProductAttribute.imageUrls._800x800"></a>
-                            <div class="coupon-value" content="40%">@item.ProductAttribute.productDescription</div>
-                            <h4 class="coupon-title"  style="min-height:100px"><a href="#">@item.ProductAttribute.imageUrls</a></h4>
+                            <a class="coupon-image bg-image" href="#" title="" data-image-src="@item.ProductAttribute.imageUrls.LargeImage"></a>
+                            <div class="coupon-value" content="40%">Price: @item.ProductAttribute.sellingPrice MRP:<strike> @item.ProductAttribute.maximumRetailPrice </strike></div>
+                            <h4 class="coupon-discount"><a href="#"> You Saved : @item.ProductAttribute.savedAmount (@item.ProductAttribute.discountPercentage%)</a></h4>
+                            <h4 class="coupon-title"><a href="#">@item.ProductAttribute.title</a></h4>
                             <div class="action-block">
                                 <a href="@item.ProductAttribute.productUrl">
                                     <p class="btn-code" data-type="code" data-link="">
@@ -30,7 +31,7 @@
             <a href="#"> <i class="ti-arrow-left"></i> </a>
         </li>
         <li class="active"> <a href="#">1</a> </li>
-        <li > <a href="#">2</a> </li>
+        <li> <a href="#">2</a> </li>
         <li> <a href="#">3</a> </li>
         <li> <a href="#">4</a> </li>
         <li>
@@ -38,4 +39,5 @@
         </li>
     </ul>
 </div>
+
 

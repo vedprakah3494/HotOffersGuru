@@ -7,8 +7,8 @@ namespace hotoffersguru.Service.Services
     public interface IProductService
     {
         List<ProductDetail> GetAllOffers();
-        List<ProductDetail> DiscountDeals();
-        List<ProductDetail> GetProductsByCategory();
+        List<ProductDetail> DiscountDeals(double maxpercentageDiscount, double percentageDiscount);
+        List<ProductDetail> GetProductsByCategory(string category);
         List<ProductDetail> GetProductsByKeyword();
     }
 }

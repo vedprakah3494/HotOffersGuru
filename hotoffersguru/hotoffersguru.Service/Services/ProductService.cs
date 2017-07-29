@@ -23,14 +23,10 @@ namespace hotoffersguru.Service
             _amazon = amazon;
 
         }
-        public List<ProductDetail> GetProductsByCategory()
+        public List<ProductDetail> GetProductsByCategory(string category)
         {
-
-            var productDetaillist = new List<ProductDetail>();
-            string category = "bags wallets belts";
-            productDetaillist = _flipkart.GetProductsByCatgegory(category);
+            var productDetaillist = _amazon.GetProductsByCatgegory(category);
             return productDetaillist;
-
         }
 
         public List<ProductDetail> GetProductsByKeyword()
@@ -44,15 +40,14 @@ namespace hotoffersguru.Service
         }
         public List<ProductDetail> GetAllOffers()
         {
-            var productDetaillist = _flipkart.GetProductByKeyword("Hot offers");
+            var productDetaillist = _amazon.AllOffer();
             return productDetaillist;
 
         }
-        public List<ProductDetail> DiscountDeals()
+        public List<ProductDetail> DiscountDeals(double maxpercentageDiscount, double minpercentageDiscount)
         {
-            var productDetaillist = new List<ProductDetail>();
-            var amazonproductlist = _amazon.DiscountDeals();
-            productDetaillist = amazonproductlist;
+            var amazonproductlist = _amazon.AllOffer().Where(x=>Convert.ToDouble(x.ProductAttribute.discountPercentage)>minpercentageDiscount && Convert.ToDouble(x.ProductAttribute.discountPercentage) <maxpercentageDiscount);
+            var productDetaillist = amazonproductlist.ToList();
             return productDetaillist;
         }
     }
