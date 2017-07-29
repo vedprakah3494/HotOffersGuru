@@ -8,7 +8,7 @@ namespace hotoffersguru.Service.Services
     {
         List<ProductDetail> GetAllOffers();
         List<ProductDetail> DiscountDeals(double maxpercentageDiscount, double percentageDiscount);
-        List<ProductDetail> GetProductsByCategory(string category);
-        List<ProductDetail> GetProductsByKeyword();
+        List<ProductDetail> GetProductsByCategory(List<string> category);
+        List<ProductDetail> GetProductsByKeyword(string keyword);
     }
 }

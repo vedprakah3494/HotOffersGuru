@@ -227,7 +227,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Portal\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Portal\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Portal\Controllers\StoreController.cs" />
     <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -249,11 +251,10 @@
     <Content Include="Areas\Portal\Content\assets\fonts\themifyd41d.eot" />
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Shared\__Layout.cshtml" />
-    <Content Include="Areas\Portal\Views\Home\_CategoryDetail.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_Computers.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_SpecialEvent.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_CategoryDetail.cshtml" />
+    <Content Include="Areas\Portal\Views\Category\_ProductByCategory.cshtml" />
     <None Include="Areas\Portal\Views\Home\_HotOffersList.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_Mobiles.cshtml" />
+    <Content Include="Areas\Portal\Views\Home\_HomeCategory.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -267,6 +268,8 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Portal\Models\" />
+    <Folder Include="Areas\Portal\Views\Comany\" />
+    <Folder Include="Areas\Portal\Views\Store\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

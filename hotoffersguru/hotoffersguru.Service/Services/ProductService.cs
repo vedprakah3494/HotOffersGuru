@@ -23,20 +23,16 @@ namespace hotoffersguru.Service
             _amazon = amazon;
 
         }
-        public List<ProductDetail> GetProductsByCategory(string category)
+        public List<ProductDetail> GetProductsByCategory(List<string> category)
         {
             var productDetaillist = _amazon.GetProductsByCatgegory(category);
             return productDetaillist;
         }
 
-        public List<ProductDetail> GetProductsByKeyword()
+        public List<ProductDetail> GetProductsByKeyword(string keyword)
         {
-
-            var productDetaillist = new List<ProductDetail>();
-            string keyword = "sony+mobiless";
-            productDetaillist = _flipkart.GetProductByKeyword(keyword);
+            var productDetaillist = _flipkart.GetProductByKeyword(keyword);
             return productDetaillist;
-
         }
         public List<ProductDetail> GetAllOffers()
         {

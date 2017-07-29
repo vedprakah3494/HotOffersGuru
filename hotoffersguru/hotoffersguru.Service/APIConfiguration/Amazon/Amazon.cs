@@ -13,7 +13,7 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
     public interface IAmazon
     {
         List<ProductDetail> AllOffer();
-        List<ProductDetail> GetProductsByCatgegory(string categoryName);
+        List<ProductDetail> GetProductsByCatgegory(List<string> categoryName);
         List<ProductDetail> GetProductByKeyword(string searchKeyword, int resultItem = 10);
     }
 
@@ -37,18 +37,22 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
         }
 
 
-        public List<ProductDetail> GetProductsByCatgegory(string categoryName)
+        public List<ProductDetail> GetProductsByCatgegory(List<string> categoryName)
         {
             var productlist = new List<ProductDetail>();
             var wrapper = new AmazonWrapper(_authentication, AmazonEndpoint.IN, AssociateTag);
             var responseGroup = AmazonResponseGroup.Large;
-            var result = wrapper.Search(categoryName, AmazonSearchIndex.All, responseGroup);
-            var productresponse = new List<ProductDetail>();
-            if (result != null)
+            foreach (var item in categoryName)
             {
-                productresponse = mapAmazonProductDetails(result);
+                var result = wrapper.Search(item, AmazonSearchIndex.All, responseGroup);
+                var productresponse = new List<ProductDetail>();
+                if (result != null)
+                {
+                    productresponse = MapAmazonProductDetails(result);
+                }
+
+                productlist.AddRange(productresponse);
             }
-            productlist.AddRange(productresponse);
             return productlist;
         }
 
@@ -68,15 +72,74 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
                 var productresponse = new List<ProductDetail>();
                 if (result != null)
                 {
-                    productresponse = mapAmazonProductDetails(result);
+                    productresponse = MapAmazonProductDetailsOfferDetails(result);
                 }
                 productlist.AddRange(productresponse);
             }
 
             return productlist;
         }
+        private static List<ProductDetail> MapAmazonProductDetails(AmazonItemResponse result)
+        {
+            var productlist = new List<ProductDetail>();
+            foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null ))
+            {
+                var productdetail = new ProductDetail();
+                productdetail.Company = new CompanyName[3];
+                productdetail.Company[0] = (CompanyName)Common.CompanyName.Amazon;
+                productdetail.ProductAttribute = new Productattributes();
 
-        private static List<ProductDetail> mapAmazonProductDetails(AmazonItemResponse result)
+                productdetail.ProductAttribute.title = item.ItemAttributes.Title;
+
+                productdetail.ProductAttribute.productUrl = item.DetailPageURL;
+                productdetail.ProductAttribute.imageUrls = new Imageurls();
+                if (item.LargeImage != null && item.MediumImage != null && item.SmallImage != null)
+                {
+                    productdetail.ProductAttribute.imageUrls.LargeImage = item.LargeImage?.URL;
+                    productdetail.ProductAttribute.imageUrls.MediumImage = item.MediumImage?.URL;
+                    productdetail.ProductAttribute.imageUrls.SmallImage = item.SmallImage?.URL;
+                }
+                else if (item.ImageSets != null)
+                {
+                    productdetail.ProductAttribute.imageUrls.LargeImage = item.ImageSets[0].LargeImage.URL;
+                    productdetail.ProductAttribute.imageUrls.MediumImage = item.ImageSets[0].MediumImage.URL;
+                    productdetail.ProductAttribute.imageUrls.SmallImage = item.ImageSets[0].SmallImage.URL;
+                }
+                productdetail.ProductID = item.ASIN;
+
+                var salePriceFormattedPrice = item.Offers.Offer[0].OfferListing[0].SalePrice?.FormattedPrice;
+                if (salePriceFormattedPrice != null)
+                    productdetail.ProductAttribute.sellingPrice =
+                        salePriceFormattedPrice.Replace("INR", "₹");
+                if (salePriceFormattedPrice != null)
+                {
+                    var priceFormattedPrice = item.Offers.Offer[0].OfferListing[0].Price?.FormattedPrice;
+                    if (priceFormattedPrice != null)
+                        productdetail.ProductAttribute.maximumRetailPrice =
+                            priceFormattedPrice.Replace("INR", "₹");
+                }
+                else
+                {
+                    var priceFormattedPrice = item.Offers.Offer[0].OfferListing[0].Price?.FormattedPrice;
+                    if (priceFormattedPrice != null)
+                        productdetail.ProductAttribute.sellingPrice =
+                            priceFormattedPrice.Replace("INR", "₹");
+                    var maximumprice = (Convert.ToDouble(item.Offers.Offer[0].OfferListing[0].Price?.Amount) + Convert.ToDouble(item.Offers.Offer[0].OfferListing[0].AmountSaved?.Amount)) / 100;
+
+                    productdetail.ProductAttribute.maximumRetailPrice = "₹" + maximumprice;
+                }
+
+
+                productdetail.ProductAttribute.discountPercentage = item.Offers.Offer[0].OfferListing[0]?.PercentageSaved;
+                var amountSaved = item.Offers.Offer[0].OfferListing[0]?.AmountSaved;
+                if (amountSaved != null)
+                    productdetail.ProductAttribute.savedAmount =
+                        (amountSaved?.FormattedPrice).Replace("INR", "₹");
+                productlist.Add(productdetail);
+            }
+            return productlist;
+        }
+        private static List<ProductDetail> MapAmazonProductDetailsOfferDetails(AmazonItemResponse result)
         {
             var productlist = new List<ProductDetail>();
             foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null && m.Offers.Offer.Length > 0 && m.Offers.Offer[0].OfferListing != null && m.Offers.Offer[0].OfferListing[0].PercentageSaved != null))
@@ -90,7 +153,13 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
 
                 productdetail.ProductAttribute.productUrl = item.DetailPageURL;
                 productdetail.ProductAttribute.imageUrls = new Imageurls();
-                if (item.ImageSets != null)
+                if (item.LargeImage != null && item.MediumImage!=null &&item.SmallImage!=null)
+                {
+                    productdetail.ProductAttribute.imageUrls.LargeImage = item.LargeImage?.URL;
+                    productdetail.ProductAttribute.imageUrls.MediumImage = item.MediumImage?.URL;
+                    productdetail.ProductAttribute.imageUrls.SmallImage = item.SmallImage?.URL;
+                }
+               else if (item.ImageSets != null)
                 {
                     productdetail.ProductAttribute.imageUrls.LargeImage = item.ImageSets[0].LargeImage.URL;
                     productdetail.ProductAttribute.imageUrls.MediumImage = item.ImageSets[0].MediumImage.URL;

@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<hotoffersguru.Entity.Models.ProductDetail>
 
-<div id="popular" class="tab-pane counties-pane active animated fadeIn">
+<div id="@ViewBag.TabID" class="tab-pane counties-pane  animated fadeIn">
     <div class="row">
         @{
             foreach (var item in Model)
@@ -33,7 +33,7 @@
                                 {
                                     <h4 class="coupon-discount">
                                         <a href="#">
-                                            <br/>
+                                            <br />
                                         </a>
                                     </h4>
                                 }

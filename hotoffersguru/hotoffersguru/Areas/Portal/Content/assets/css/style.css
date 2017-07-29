@@ -2436,6 +2436,7 @@ a.thumbnail:hover {
     .coupon-block .coupon-image {
         display: block;
         height: 220px;
+        background-size: auto 100%;
     }
 
     .coupon-block .coupon-store {

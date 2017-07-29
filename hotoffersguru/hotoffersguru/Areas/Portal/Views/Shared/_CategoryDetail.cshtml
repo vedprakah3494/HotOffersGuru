@@ -1,0 +1,57 @@
+﻿@using System.Linq
+@*@model IEnumerable<hotoffersguru.Entity.Models.CategoryDetail>*@
+
+<div class="col-lg-3">
+    <div class="widget categories b-b-0">
+        <!-- /widget heading -->
+        <div class="widget-heading">
+            <h3 class="widget-title text-dark">
+                Popular categories
+            </h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="widget-body">
+            <!-- Sidebar navigation -->
+            <ul class="nav sidebar-nav">
+                <li>
+                    @Html.ActionLink("Mobiles", "ProductByCategory", new { controller = "Category", CategoryName = "Mobiles" })
+                </li>
+              
+                <li>
+                    @Html.ActionLink("Laptops & Peripherals", "ProductByCategory", new { controller = "Category", CategoryName = "Laptops & Peripherals" })
+                </li>
+                <li>
+                    @Html.ActionLink("TV & Entertainment Devices", "ProductByCategory", new { controller = "Category", CategoryName = "TV & Entertainment Devices" })
+                </li>
+                <li>
+                    @Html.ActionLink("Camera, DSLRs & Accessories", "ProductByCategory", new { controller = "Category", CategoryName = "Camera, DSLRs & Accessories" })
+                </li>
+                <li>
+                    @Html.ActionLink("Baby & Kid", "ProductByCategory", new { controller = "Category", CategoryName = "Baby & Kid" })
+                </li>
+                <li>
+                    @Html.ActionLink("Beauty & Health", "ProductByCategory", new { controller = "Category", CategoryName = "Beauty & Health" })
+                </li>
+                <li>
+                    @Html.ActionLink("Stationery & Office Supplies", "ProductByCategory", new { controller = "Category", CategoryName = "Stationery & Office Supplies " })
+                </li>
+                <li>
+                    @Html.ActionLink(" Home And Kitchen Appliances", "ProductByCategory", new { controller = "Category", CategoryName = " Home And Kitchen Appliances" })
+                </li>
+                <li>
+                    @Html.ActionLink("Personal & Health Devices", "ProductByCategory", new { controller = "Category", CategoryName = "Personal & Health Devices" })
+                </li>
+                <li>
+                    @Html.ActionLink("Woman Fashion ", "ProductByCategory", new { controller = "Category", CategoryName = " Woman Fashion" })
+                </li>
+                <li>
+                    @Html.ActionLink("Men Fashion", "ProductByCategory", new { controller = "Category", CategoryName = "Men Fashion" })
+                </li>
+
+                        
+            </ul>
+            <!-- Sidebar divider -->
+        </div>
+    </div>
+
+</div>

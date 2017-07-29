@@ -84,10 +84,13 @@
 
                                 </ul>
                             </li>
-                            <li> <a href="#"><span> Mobile Accessories </span> </a> </li>
-                            <li> <a href="#"><span> Men Fashion </span> </a> </li>
-                            <li> <a href="#"><span>Women Fashion </span> </a> </li>
-
+                            <li>
+                                @Html.ActionLink("Woman Fashion ", "ProductByCategory", new { controller = "Category", CategoryName = " Woman Fashion" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Men Fashion", "ProductByCategory", new { controller = "Category", CategoryName = "Men Fashion" })
+                            </li>
+                           
                         </ul>
                         <!-- End navigation menu  -->
                     </div>
