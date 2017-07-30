@@ -19,6 +19,7 @@ namespace hotoffersguru.Areas.Portal.Controllers
         [OutputCache(Duration = 3600, VaryByParam = "CategoryName")]
         public ActionResult ProductByCategory(string CategoryName)
         {
+            ViewBag.CategoryName = CategoryName!=null? CategoryName:"Best Deals";
             var categoryList = new List<string>();
             categoryList = CategoryName.Split(',').ToList();
             var productlist = _productService.GetProductsByKeyword(categoryList);

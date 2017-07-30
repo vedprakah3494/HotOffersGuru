@@ -74,7 +74,7 @@
                                     @Html.Partial("_CategoryMenu")
                                 </ul>
                             </li>
-                            
+
                             <li class="has-submenu">
                                 <a href="#"><i></i> <span>Offers & Coupon Code </span> </a>
                                 <ul class="submenu">
@@ -93,49 +93,53 @@
                             <li>
                                 @Html.ActionLink("Men Fashion", "ProductByCategory", new { controller = "Category", CategoryName = "Men Fashion" })
                             </li>
-                           
+
                         </ul>
                         <!-- End navigation menu  -->
                     </div>
                 </div>
             </div>
         </header>
-       
-    <div class="wrapper">
-    <div class="container">
-   
-    @RenderBody()
-    
-    </div>
-    </div>
-    <footer id="footer">
-        <div class="btmFooter">
+        <div class="clearfix" style="margin-top:50px"></div>
+        
+        <div class="wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-10 col-sm-offset-1 text-center">
-                        <ul class="list-inline list-unstyled">
-                            <li><a href="#">Home</a> </li>
-                            <li><a href="#">About Us</a> </li>
-                            <li><a href="#">FAQ</a> </li>
-                            <li><a href="#">Contact Us</a> </li>
-                        </ul>
+                    <div class="col-sm-12">
                     </div>
                 </div>
-                <div class="col-sm-12 text-center m-t-20">
-                    <p>
-                        <strong>
-                            Copyright 2016
-                        </strong> HotOffersGuru <i class="ti-heart">
-                        </i> <strong>
-                            by HotOffersGuru
-                        </strong>
-                    </p>
-                </div>
-                
+                @RenderBody()
+
             </div>
         </div>
-    </footer>
+        <footer id="footer">
+            <div class="btmFooter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 text-center">
+                            <ul class="list-inline list-unstyled">
+                                <li><a href="#">Home</a> </li>
+                                <li><a href="#">About Us</a> </li>
+                                <li><a href="#">FAQ</a> </li>
+                                <li><a href="#">Contact Us</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 text-center m-t-20">
+                        <p>
+                            <strong>
+                                Copyright 2016
+                            </strong> HotOffersGuru <i class="ti-heart">
+                            </i> <strong>
+                                by HotOffersGuru
+                            </strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
 
     </div>
 </body>
-</html lang="">
+</html>
