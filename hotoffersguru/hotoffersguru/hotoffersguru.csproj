@@ -182,7 +182,6 @@
     <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.svg" />
     <Content Include="Areas\Portal\Content\assets\images\logo.png" />
-    <Content Include="Areas\Portal\Content\assets\images\payment\amz-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\ax-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mb-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mst-icon.png" />

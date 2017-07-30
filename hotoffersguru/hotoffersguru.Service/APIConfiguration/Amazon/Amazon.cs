@@ -18,7 +18,7 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
     {
         readonly AmazonAuthentication _authentication = new AmazonAuthentication();
         private const string AssociateTag = "hotoffersguru-21";
-        private static string StoreUrl = "localhost:3529/Areas/Portal/Content/StoreLogo/azlogo.png";
+        private static string StoreUrl = "~/Areas/Portal/Content/StoreLogo/azlogo.png";
         List<string> CategoryList = new List<string>();
 
         public Amazon()

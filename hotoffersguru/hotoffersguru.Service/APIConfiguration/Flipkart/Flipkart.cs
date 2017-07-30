@@ -24,7 +24,7 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
         public const string baseUrl = "https://affiliate-api.flipkart.net/affiliate/";
         public const string AffiliatedID = "shopforgirlfr";
         public const string TokenID = "770b29ed2fa240b3978c2a2b744d90f5";
-        private static string StoreUrl = "localhost:3529/Areas/Portal/Content/StoreLogo/fklogo.png";
+        private static string StoreUrl = "~/Areas/Portal/Content/StoreLogo/fklogo.png";
         private string hotoffercategory = "Mobile phones,Head Phones,Women Fashion,Men Jeans,Men T-shirt";//ConfigurationManager.AppSettings["hotoffercategory"].ToString();
 
         public List<ProductDetail> GetProductsByCatgegory(string CategoryName)
