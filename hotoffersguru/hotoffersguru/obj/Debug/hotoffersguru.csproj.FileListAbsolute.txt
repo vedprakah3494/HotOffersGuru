@@ -1,3 +1,4 @@
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\ApplicationInsights.config
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\roslyn\csc.exe
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -62,6 +63,5 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.W
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.WebPages.Razor.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.Json.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.xml
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.pdb

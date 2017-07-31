@@ -1,0 +1,25 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "HotOffersGuru";
+    Layout = "~/Areas/Portal/Views/Shared/__Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-9">
+        <ul class="nav nav-tabs responsive-tabs" id="myTab">
+            <li class="active"><a data-toggle="tab" href="#popular"><i class="ti-bar-chart"></i>Hot Offers</a> </li>
+            <li class=""><a data-toggle="tab" href="#Mobiles"><i class="ti-timer"></i>Mobiles</a> </li>
+            <li class=""><a data-toggle="tab" href="#Computers"><i class="ti-timer"></i>Computers</a> </li>
+            <li class=""><a data-toggle="tab" href="#RakshaBandhan"><i class="ti-timer"></i>Raksha Bandhan Special</a> </li>
+        </ul>
+        <div class="tab-content clearfix" id="myTabContent">
+            @{ Html.RenderAction("HotOffersList"); }
+            @{ Html.RenderAction("HomeCategory", "Home", new { CategoryName = "Mobiles" }); }
+            @{ Html.RenderAction("HomeCategory", "Home", new { CategoryName = "Computers" }); }
+            @{ Html.RenderAction("HomeCategory", "Home", new { CategoryName = "Raksha Bandhan" }); }
+        </div>
+    </div>
+    @{ Html.RenderPartial("_CategoryDetail"); }
+</div>
+
+
+

@@ -1,0 +1,23 @@
+﻿@using System.Linq
+@*@model IEnumerable<hotoffersguru.Entity.Models.CategoryDetail>*@
+
+<div class="col-lg-3">
+    <div class="widget categories b-b-0">
+        <!-- /widget heading -->
+        <div class="widget-heading">
+            <h3 class="widget-title text-dark">
+                Popular categories
+            </h3>
+            <div class="clearfix"></div>
+        </div>
+        <div class="widget-body">
+            <!-- Sidebar navigation -->
+            <ul class="nav sidebar-nav">
+             @Html.Partial("_CategoryMenu")
+                        
+            </ul>
+            <!-- Sidebar divider -->
+        </div>
+    </div>
+
+</div>
