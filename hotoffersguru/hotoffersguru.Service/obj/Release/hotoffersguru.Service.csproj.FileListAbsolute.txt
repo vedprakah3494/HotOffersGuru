@@ -1,0 +1,15 @@
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Service.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Service.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\AutoMapper.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Data.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Entity.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\Nager.AmazonProductAdvertising.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\Nager.ArticleNumber.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\Newtonsoft.Json.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Data.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\hotoffersguru.Entity.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\AutoMapper.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\bin\Release\Newtonsoft.Json.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Release\hotoffersguru.Service.csprojResolveAssemblyReference.cache
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Release\hotoffersguru.Service.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Service\obj\Release\hotoffersguru.Service.pdb
