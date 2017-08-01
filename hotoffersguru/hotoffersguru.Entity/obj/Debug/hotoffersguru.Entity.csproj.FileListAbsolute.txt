@@ -2,3 +2,6 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\bin\Debug
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\bin\Debug\hotoffersguru.Entity.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\obj\Debug\hotoffersguru.Entity.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\obj\Debug\hotoffersguru.Entity.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\bin\Debug\Newtonsoft.Json.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\bin\Debug\Newtonsoft.Json.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Entity\obj\Debug\hotoffersguru.Entity.csprojResolveAssemblyReference.cache

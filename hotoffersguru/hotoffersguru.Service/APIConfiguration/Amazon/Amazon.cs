@@ -77,7 +77,7 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
         private static List<ProductDetail> MapAmazonProductDetails(AmazonItemResponse result)
         {
             var productlist = new List<ProductDetail>();
-            foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null ))
+            foreach (var item in result.Items.Item.Where(m => m.Offers != null && m.Offers.Offer != null))
             {
                 var productdetail = new ProductDetail();
                 productdetail.StoreCode = "AZ";

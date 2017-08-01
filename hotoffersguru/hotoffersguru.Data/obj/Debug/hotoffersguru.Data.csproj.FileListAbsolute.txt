@@ -15,3 +15,5 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Debug\M
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Debug\hotoffersguru.Data.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Debug\hotoffersguru.Data.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Debug\hotoffersguru.Data.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Debug\Newtonsoft.Json.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Debug\Newtonsoft.Json.xml

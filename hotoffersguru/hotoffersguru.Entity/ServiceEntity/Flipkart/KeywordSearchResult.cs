@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace hotoffersguru.Entity.ServiceEntity.Flipkart
 {
@@ -41,8 +42,11 @@ namespace hotoffersguru.Entity.ServiceEntity.Flipkart
 
     public class Imageurls
     {
+        [JsonProperty("200x200")]
         public string _200x200 { get; set; }
+        [JsonProperty("400x400")]
         public string _400x400 { get; set; }
+        [JsonProperty("800x800")]
         public string _800x800 { get; set; }
     }
 
