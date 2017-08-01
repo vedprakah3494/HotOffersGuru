@@ -49,6 +49,7 @@
     <Compile Include="ServiceEntity\Flipkart\FlipkartDeals.cs" />
     <Compile Include="ServiceEntity\Flipkart\FlipkartOffers.cs" />
     <Compile Include="ServiceEntity\Flipkart\FlipkartProdcut.cs" />
+    <Compile Include="ServiceEntity\Flipkart\KeywordSearchResult.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,3 @@
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\ApplicationInsights.config
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\roslyn\csc.exe
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -42,7 +41,6 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Unity.Mvc5.d
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\WebActivatorEx.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.Json.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Nager.AmazonProductAdvertising.dll
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\hotoffersguru.Data.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\hotoffersguru.Entity.pdb
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\hotoffersguru.Service.pdb
@@ -62,6 +60,6 @@ D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.W
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.WebPages.Deployment.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\System.Web.WebPages.Razor.xml
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\Newtonsoft.Json.xml
-D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\bin\AutoMapper.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.csprojResolveAssemblyReference.cache
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.dll
 D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru\obj\Debug\hotoffersguru.pdb

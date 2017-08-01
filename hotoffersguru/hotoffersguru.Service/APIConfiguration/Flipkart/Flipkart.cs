@@ -10,6 +10,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web.Configuration;
 using System.Configuration;
+using System.Web.Caching;
+using hotoffersguru.Entity.ServiceEntity.Flipkart;
 
 namespace hotoffersguru.Service.APIConfiguration.Flipkart
 {
@@ -32,10 +34,10 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
              HttpClient client = new HttpClient();
 
             var productDetailList = new List<ProductDetail>();
-
+            var allcategory = getCategoryDetailFlipkart();
             try
             {
-                var firstOrDefault = getCategoryDetailFlipkart().FirstOrDefault(m => m.CategoryName.Contains(CategoryName));
+                var firstOrDefault = allcategory.FirstOrDefault(m => m.CategoryName.Contains(CategoryName));
                 if (firstOrDefault != null)
                 {
                     var categorydetail = firstOrDefault.CategoryURl.Replace(baseUrl,"");
@@ -54,10 +56,7 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
                         foreach(var product in productlist.productInfoList)
                         {
                             var productdetail = new ProductDetail();
-                            Mapper.Map<hotoffersguru.Entity.ServiceEntity.Productattributes, hotoffersguru.Entity.Models.Productattributes>(product.productBaseInfo.productAttributes,productdetail.ProductAttribute);
-                            productdetail.ProductCategory.CategoryName = product.productBaseInfo.productIdentifier.categoryPaths.categoryPath[0][0].title;
-                            productdetail.ProductID = product.productBaseInfo.productIdentifier.productId;
-                     
+                          
                         }
 
                     }
@@ -92,44 +91,37 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
                 foreach (var keyword in searchKeyword)
                 {
                     var productDetailresponse = client
-                        .GetAsync("search/json?query=" + keyword + "&resultCount=" + resultItem).Result;
+                        .GetAsync("1.0/search.json?query=" + keyword + "&resultCount=" + resultItem).Result;
                     if (productDetailresponse.IsSuccessStatusCode)
                     {
                         var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
-                        var productlist = JsonConvert.DeserializeObject<FlipkartProductDetail>(productListresponse);
-                        foreach (var pro in productlist.productInfoList.Where(
-                            x => x.productBaseInfo.productAttributes.imageUrls != null))
+                        var productlist = JsonConvert.DeserializeObject<KeywordSearchResult>(productListresponse);
+                        foreach (var pro in productlist.productInfoList.Where(x => x.productBaseInfoV1.imageUrls != null))
                         {
                             var productdetail = new ProductDetail();
-                            productdetail.ProductID = pro.productBaseInfo.productIdentifier.productId;
+                            productdetail.ProductID = pro.productBaseInfoV1.productId;
                             productdetail.StoreCode = "FK";
                             productdetail.StoreLogoUrl = StoreUrl;
                             productdetail.ProductAttribute=new Entity.Models.Productattributes();
                             productdetail.ProductAttribute.imageUrls=new Entity.Models.Imageurls();
-                            if (pro.productBaseInfo.productAttributes.imageUrls.unknown != null)
+                            if (pro.productBaseInfoV1.imageUrls._800x800 != null)
                             {
                                 productdetail.ProductAttribute.imageUrls.LargeImage =
-                                    pro.productBaseInfo.productAttributes.imageUrls.unknown;
+                                    pro.productBaseInfoV1.imageUrls._800x800;
                             }
-                            if (pro.productBaseInfo.productAttributes.imageUrls.unknown != null)
+                            if (pro.productBaseInfoV1.imageUrls._400x400 != null)
                             {
                                 productdetail.ProductAttribute.imageUrls.MediumImage =
-                                    pro.productBaseInfo.productAttributes.imageUrls?._400x400;
+                                    pro.productBaseInfoV1.imageUrls?._400x400;
                             }
-                            productdetail.ProductAttribute.maximumRetailPrice = "₹" +
-                                                                                pro.productBaseInfo.productAttributes
-                                                                                    .maximumRetailPrice.amount
-                                                                                    .ToString();
-                            productdetail.ProductAttribute.sellingPrice =
-                                "₹" + pro.productBaseInfo.productAttributes.sellingPrice.amount.ToString();
-                            productdetail.ProductAttribute.discountPercentage =
-                                pro.productBaseInfo.productAttributes.discountPercentage.ToString();
-                            productdetail.ProductAttribute.savedAmount =
-                            (pro.productBaseInfo.productAttributes.maximumRetailPrice.amount -
-                             pro.productBaseInfo.productAttributes.sellingPrice.amount).ToString();
+                            productdetail.ProductAttribute.maximumRetailPrice =
+                                "₹" + pro.productBaseInfoV1.maximumRetailPrice.amount;
+                            productdetail.ProductAttribute.sellingPrice = "₹" + pro.productBaseInfoV1.flipkartSellingPrice.amount;
+                            productdetail.ProductAttribute.discountPercentage =pro.productBaseInfoV1.discountPercentage.ToString();
+                            productdetail.ProductAttribute.savedAmount =(pro.productBaseInfoV1.maximumRetailPrice.amount -pro.productBaseInfoV1.flipkartSellingPrice.amount).ToString();
                             productdetail.ProductAttribute.productUrl =
-                                pro.productBaseInfo.productAttributes.productUrl;
-                            productdetail.ProductAttribute.title = pro.productBaseInfo.productAttributes.title;
+                                pro.productBaseInfoV1.productUrl;
+                            productdetail.ProductAttribute.title = pro.productBaseInfoV1.title;
                             productDetailList.Add(productdetail);
                         }
                     }
@@ -223,7 +215,6 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
             }
             return productDetailList;
         }
-
         private List<CategoryDetail> getCategoryDetailFlipkart()
         {
              HttpClient client = new HttpClient();
