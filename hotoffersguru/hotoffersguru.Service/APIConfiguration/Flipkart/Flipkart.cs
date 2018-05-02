@@ -24,8 +24,8 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
     public class Flipkart : IFlipkart
     {
         public const string baseUrl = "https://affiliate-api.flipkart.net/affiliate/";
-        public const string AffiliatedID = "shopforgirlfr";
-        public const string TokenID = "770b29ed2fa240b3978c2a2b744d90f5";
+        public const string AffiliatedID = "hotoffersguru";
+        public const string TokenID = "b8508c55c96846a7a14d24c1bf6c0091";
         private static string StoreUrl = "~/Areas/Portal/Content/StoreLogo/fklogo.png";
         private string hotoffercategory = "Mobile phones,Head Phones,Women Fashion,Men Jeans,Men T-shirt";//ConfigurationManager.AppSettings["hotoffercategory"].ToString();
 
@@ -96,7 +96,7 @@ namespace hotoffersguru.Service.APIConfiguration.Flipkart
                     {
                         var productListresponse = productDetailresponse.Content.ReadAsStringAsync().Result;
                         var productlist = JsonConvert.DeserializeObject<KeywordSearchResult>(productListresponse);
-                        foreach (var pro in productlist.productInfoList.Where(x => x.productBaseInfoV1.imageUrls != null))
+                        foreach (var pro in productlist.products.Where(x => x.productBaseInfoV1.imageUrls != null))
                         {
                             var productdetail = new ProductDetail();
                             productdetail.ProductID = pro.productBaseInfoV1.productId;

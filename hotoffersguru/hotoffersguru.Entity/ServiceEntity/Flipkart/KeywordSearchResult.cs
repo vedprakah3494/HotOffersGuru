@@ -7,13 +7,12 @@ using Newtonsoft.Json;
 
 namespace hotoffersguru.Entity.ServiceEntity.Flipkart
 {
-
     public class KeywordSearchResult
     {
-        public Productinfolist[] productInfoList { get; set; }
+        public Product[] products { get; set; }
     }
 
-    public class Productinfolist
+    public class Product
     {
         public Productbaseinfov1 productBaseInfoV1 { get; set; }
         public Productshippinginfov1 productShippingInfoV1 { get; set; }
