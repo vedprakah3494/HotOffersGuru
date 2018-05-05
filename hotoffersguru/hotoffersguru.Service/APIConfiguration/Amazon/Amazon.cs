@@ -23,8 +23,8 @@ namespace hotoffersguru.Service.APIConfiguration.Amazon
 
         public Amazon()
         {
-            _authentication.AccessKey = "AKIAJX4A7H4FYEHWY4IA";
-            _authentication.SecretKey = "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";
+            _authentication.AccessKey = "AKIAIMLIYIOSMEMKU53Q";
+            _authentication.SecretKey = "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";
             CategoryList.Add("mens footwear");
             CategoryList.Add("mens clothing");
             CategoryList.Add("Mobile Phones");
