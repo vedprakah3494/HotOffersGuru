@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>hotoffersguru</RootNamespace>
     <AssemblyName>hotoffersguru</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -76,8 +77,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=59d6d24383174ac4, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocation.1.0.0\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
@@ -92,6 +93,15 @@
       <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Nager.ArticleNumber, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nager.ArticleNumber.1.0.1\lib\net45\Nager.ArticleNumber.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceLocation, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceLocation.1.3.1\lib\net45\ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -99,8 +109,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
@@ -126,13 +134,13 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Unity.Mvc5, Version=1.2.3.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.Mvc5.1.2.3\lib\net45\Unity.Mvc5.dll</HintPath>
       <Private>True</Private>
@@ -148,6 +156,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Temp\blog_articles.html" />
+    <Content Include="App_Data\Temp\blog_single.html" />
+    <Content Include="App_Data\Temp\categories.html" />
+    <Content Include="App_Data\Temp\contact.html" />
+    <Content Include="App_Data\Temp\faq.html" />
+    <Content Include="App_Data\Temp\features.html" />
+    <Content Include="App_Data\Temp\index.html" />
+    <Content Include="App_Data\Temp\pricing.html" />
+    <Content Include="App_Data\Temp\results.html" />
+    <Content Include="App_Data\Temp\results_2.html" />
+    <Content Include="App_Data\Temp\results_3.html" />
+    <Content Include="App_Data\Temp\store_profile.html" />
+    <Content Include="App_Data\Temp\submit.html" />
     <Content Include="Areas\Portal\Content\assets\css\animate.min.css" />
     <Content Include="Areas\Portal\Content\assets\css\animsition.min.css" />
     <Content Include="Areas\Portal\Content\assets\css\bootstrap.min.css" />
@@ -160,51 +181,12 @@
     <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regular.html" />
     <Content Include="Areas\Portal\Content\assets\fonts\glyphicons-halflings-regulard41d.html" />
     <Content Include="Areas\Portal\Content\assets\fonts\themify9f24.svg" />
-    <Content Include="Areas\Portal\Content\assets\images\amazon-logo-small.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal1.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal2.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal4.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal5.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal6.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal7.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\deal8.jpg" />
     <Content Include="Areas\Portal\Content\assets\images\logo.png" />
-    <Content Include="Areas\Portal\Content\assets\images\payment\amz-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\ax-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mb-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mst-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\mstr-icon.png" />
     <Content Include="Areas\Portal\Content\assets\images\payment\paypal-icon.png" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-01.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-02.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide-03.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_2.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_4.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\slide_1_5.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-4.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-5.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thmbsm-6.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb10.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb11.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb12.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb13.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb14.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb15.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb2.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb3.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb4.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb5.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb6.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumb8.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB1.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB2.png" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB3.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB7.jpg" />
-    <Content Include="Areas\Portal\Content\assets\images\thumbB8.png" />
     <Content Include="Areas\Portal\Content\assets\js\animsition.min.js" />
     <Content Include="Areas\Portal\Content\assets\js\bootstrap.min.js" />
     <Content Include="Areas\Portal\Content\assets\js\jquery.min.js" />
@@ -212,6 +194,8 @@
     <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.carousel.css" />
     <Content Include="Areas\Portal\Content\owl.carousel\assets\owl.video.play.html" />
     <Content Include="Areas\Portal\Content\owl.carousel\owl.carousel.min.js" />
+    <Content Include="Areas\Portal\Content\StoreLogo\azlogo.png" />
+    <Content Include="Areas\Portal\Content\StoreLogo\fklogo.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -219,7 +203,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Portal\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Portal\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Portal\Controllers\StoreController.cs" />
     <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -242,7 +228,13 @@
     <Content Include="Areas\Portal\Views\Home\Index.cshtml" />
     <Content Include="Areas\Portal\Views\Shared\__Layout.cshtml" />
     <Content Include="Areas\Portal\Views\Shared\_CategoryDetail.cshtml" />
-    <Content Include="Areas\Portal\Views\Shared\_ProductList.cshtml" />
+    <Content Include="Areas\Portal\Views\Category\_ProductByCategory.cshtml" />
+    <None Include="Areas\Portal\Views\Home\_HotOffersList.cshtml" />
+    <Content Include="Areas\Portal\Views\Home\_HomeCategory.cshtml" />
+    <Content Include="Areas\Portal\Views\Store\ProductsbyStore.cshtml" />
+    <Content Include="Areas\Portal\Views\Shared\_CategoryMenu.cshtml" />
+    <Content Include="Areas\Portal\Views\Store\_ProductsbyStore.cshtml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,11 +243,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="App_Data\Temp\assets\" />
+    <Folder Include="App_Data\Temp\owl.carousel\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Portal\Models\" />
+    <Folder Include="Content\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

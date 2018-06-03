@@ -1,5 +1,7 @@
-﻿using hotoffersguru.Service;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.UI;
+using hotoffersguru.Service.Services;
 
 namespace hotoffersguru.Areas.Portal.Controllers
 {
@@ -11,84 +13,29 @@ namespace hotoffersguru.Areas.Portal.Controllers
             _productService = productService;
 
         }
-        // GET: Portal/Home
         public ActionResult Index()
         {
-           var Productlist= _productService.GetProductDetail();
-            //productService.GetProductDetailByKeword();
-            return View(Productlist);
-        }
-
-        // GET: Portal/Home/Details/5
-        public ActionResult Details(int id)
-        {
             return View();
         }
 
-        // GET: Portal/Home/Create
-        public ActionResult Create()
+        // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        public PartialViewResult HotOffersList()
         {
-            return View();
+            var productlist = _productService.GetAllOffers();
+            return PartialView("_HotOffersList", productlist);
+        }
+        // GET: Portal/Home   
+        [OutputCache(Duration = 3600, VaryByParam = "CategoryName")]
+
+        public PartialViewResult HomeCategory(string CategoryName)
+        {
+            ViewBag.TabID = CategoryName.Replace(" ","").Trim();
+            var categoryList = new List<string>();
+            categoryList.Add(CategoryName);
+            var productlist = _productService.GetProductsByKeyword(categoryList);
+            return PartialView("_HomeCategory", productlist);
         }
 
-        // POST: Portal/Home/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Portal/Home/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Portal/Home/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Portal/Home/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Portal/Home/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

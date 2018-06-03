@@ -4,6 +4,9 @@ using Unity.Mvc5;
 using hotoffersguru.Service.APIConfiguration;
 using hotoffersguru.Service;
 using hotoffersguru.Areas.Portal.Controllers;
+using hotoffersguru.Service.APIConfiguration.Flipkart;
+using hotoffersguru.Service.Services;
+using hotoffersguru.Service.APIConfiguration.Amazon;
 
 namespace hotoffersguru
 {
@@ -21,6 +24,7 @@ namespace hotoffersguru
             container.RegisterType<IFlipkart, Flipkart>();
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<IController, HomeController>();
+            container.RegisterType<IAmazon, Amazon>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }

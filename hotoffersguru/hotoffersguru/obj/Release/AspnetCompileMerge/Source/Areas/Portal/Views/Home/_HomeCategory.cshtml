@@ -1,0 +1,68 @@
+﻿@model IEnumerable<hotoffersguru.Entity.Models.ProductDetail>
+
+<div id="@ViewBag.TabID" class="tab-pane counties-pane  animated fadeIn">
+    <div class="row">
+        @{
+            foreach (var item in Model)
+            {
+
+                <div class="col-sm-4">
+                    <div class="widget">
+                        <div class="coupon-block equal">
+                            <a href="#" class="coupon-storelogo"> <img src="@Url.Content(item.StoreLogoUrl)" alt="" class="img-responsive"> </a>                           
+                            <a class="coupon-image bg-image" href="#" title="" data-image-src="@item.ProductAttribute.imageUrls.LargeImage"></a>
+
+                            <div class="coupon-value" content="40%">
+                                Price: @item.ProductAttribute.sellingPrice
+                                @{
+                                    if (item.ProductAttribute.discountPercentage != null)
+                                    {
+                                        <span> MRP:<strike> @item.ProductAttribute.maximumRetailPrice </strike></span>
+                                    }
+                                }
+                            </div>
+                            @{
+                                if (item.ProductAttribute.discountPercentage != null)
+                                {
+                                    <h4 class="coupon-discount">
+                                        <a href="#">
+                                            You Saved : @item.ProductAttribute.savedAmount (@item.ProductAttribute.discountPercentage%)
+                                        </a>
+                                    </h4>
+                                }
+                                else
+                                {
+                                    <h4 class="coupon-discount">
+                                        <a href="#">
+                                            <br/>
+                                        </a>
+                                    </h4>
+                                }
+                            }
+                            <h4 class="coupon-title"><a href="#">@item.ProductAttribute.title</a></h4>
+                            <div class="action-block">
+                                <a href="@item.ProductAttribute.productUrl">
+                                    <p class="btn-code" data-type="code" data-link="">
+                                        <span class="partial-code">FLIPKART</span> <span class="btn-hover">GRAB DEAL</span>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                }
+        }
+    </div>
+    <ul class="pagination pagination-lg m-t-0">
+        <li>
+            <a href="#"> <i class="ti-arrow-left"></i> </a>
+        </li>
+        <li class="active"> <a href="#">1</a> </li>
+        <li> <a href="#">2</a> </li>
+        <li> <a href="#">3</a> </li>
+        <li> <a href="#">4</a> </li>
+        <li>
+            <a href="#"> <i class="ti-arrow-right"></i> </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,17 @@
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\hotoffersguru.Data.dll.config
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\hotoffersguru.Data.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\hotoffersguru.Data.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\EntityFramework.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\hotoffersguru.Entity.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.ServiceLocation.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.Unity.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\hotoffersguru.Entity.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\EntityFramework.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.ServiceLocation.pdb
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.ServiceLocation.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.Unity.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\bin\Release\Microsoft.Practices.Unity.Configuration.xml
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Release\hotoffersguru.Data.csprojResolveAssemblyReference.cache
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Release\hotoffersguru.Data.dll
+D:\DEVLOPMENT\Project\hotoffersguru\hotoffersguru\hotoffersguru.Data\obj\Release\hotoffersguru.Data.pdb
